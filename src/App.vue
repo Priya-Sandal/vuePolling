@@ -1,10 +1,28 @@
 <template>
-  <nav>
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </nav>
+  </nav> -->
+  <NavigationBar/>
   <router-view/>
 </template>
+<script>
+import { useStore } from 'vuex';
+import NavigationBar from './components/NavigationBar.vue';
+
+export default{
+  name: 'App',
+  components: {
+    NavigationBar
+  },
+  setup()
+  {
+    const store = useStore();
+
+  }
+}
+</script>
+
 
 <style>
 #app {
@@ -12,11 +30,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: red;
 }
 
 nav {
-  padding: 30px;
+  padding: 40px;
 }
 
 nav a {
