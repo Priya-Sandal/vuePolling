@@ -4,7 +4,7 @@
         <h1>Signup </h1>
         <div id="form">
             <!-- error -->
-            <div class="alert alert-danger alert-error" role="alert" v-if="showError">{{storeData.errorMessage}}
+            <div class="alert alert-danger alert-error" role="alert" v-if="showError">{{storeData}}
             </div>
             <form @submit.prevent="onsignup()">
                 <div class="field">

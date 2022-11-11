@@ -16,6 +16,7 @@ export default{
     NavigationBar
   },
   setup()
+  
   {
     const store = useStore();
 
