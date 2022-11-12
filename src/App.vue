@@ -1,10 +1,36 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+
+  <NavigationBar/>
   <router-view/>
+  <TheLoader v-if="showLoader"/>
 </template>
+
+
+<script>
+import { computed } from 'vue';
+import { useStore } from 'vuex';
+import NavigationBar from './components/NavigationBar.vue';
+import TheLoader from './components/TheLoader.vue';
+export default{
+  name: 'App',
+  components: {
+    NavigationBar,
+    TheLoader
+  },
+  setup()
+  
+  {
+    const store = useStore();
+    const showLoader = computed(() => {
+      return store.state.showLoader
+    })
+    return{
+      showLoader
+    }
+  }
+}
+</script>
+
 
 <style>
 #app {
@@ -12,11 +38,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: blue;
 }
 
-nav {
-  padding: 30px;
+/* nav {
+  padding: 40px;
 }
 
 nav a {
@@ -26,5 +52,5 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>
