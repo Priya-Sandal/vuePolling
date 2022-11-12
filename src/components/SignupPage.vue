@@ -6,7 +6,7 @@
             <!-- error -->
             <div class="alert alert-danger alert-error" role="alert" v-if="showError">{{storeData}}
             </div>
-            <form @submit.prevent="onsignup()">
+            <form @submit.prevent="onSignup()">
                 <div class="field">
 
                     <label for="user-name" class="label-field">USERNAME:</label>
@@ -88,7 +88,7 @@ export default {
         let passwordEmptyError = ref(false);
         let passwordValidationError = ref(false);
 
-        const onsignup = async () => {
+        const onSignup = async () => {
             formValidated.value = true;
             passwordEmptyError.value = false;
             passwordValidationError.value = false;
@@ -137,7 +137,7 @@ export default {
             }
         }
         return {
-            onsignup,
+            onSignup,
             showError,
             role,
             store,

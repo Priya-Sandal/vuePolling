@@ -11,12 +11,12 @@ export default {
         let responseData = response.data;
         if (response.data.error === 0) {
             console.log(responseData);
-            context.commit('setUserTokenData', {
-                role: responseData.data.role,
-                password: responseData.data.password,
-                token: responseData.data.id,
-                username: responseData.data.username,
-            })
+            // context.commit('setUserTokenData', {
+            //     role: responseData.data.role,
+            //     password: responseData.data.password,
+            //     token: responseData.data.id,
+            //     username: responseData.data.username,
+            // })
             // context.commit('setLocalStorage', {
             //         role : responseData.data.role,
             //         password: responseData.data.password,

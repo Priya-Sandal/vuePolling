@@ -6,11 +6,19 @@ const store = createStore({
       signup : signup,
       login : login,
   },
-  state: {
+
+  state() {
+    return{
+      showLoader: false,
+    };
   },
   getters: {
   },
+ 
   mutations: {
+    showLoaderMutation(state, payload) {
+        state.showLoader = payload;
+    }
   },
   actions: {
   },

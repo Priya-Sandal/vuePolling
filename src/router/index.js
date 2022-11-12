@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+const HomePage =() => import('../components/HomePage.vue');
 const SignupPage = () => import('../components/SignupPage.vue');
 const LoginPage =() => import('../components/LoginPage.vue');
 const routes = [
@@ -14,6 +14,12 @@ const routes = [
     name: 'LoginPage',
     path: '/login',
     component: LoginPage
+  },
+
+  {
+    name: ' HomePage',
+    path: '/',
+    component: HomePage
   }
 ]
 
@@ -22,4 +28,4 @@ const router = createRouter({
   routes
 })
 
-export default router
+export default router;
